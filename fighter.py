@@ -408,8 +408,8 @@ class Fighter:
         called on every frame. determines whether or not the player should be falling
         :param screen_height: height of screen in pixels
         """
-        if self.loc[1] + self.rect[1] > screen_height:
-            self.loc[1] = screen_height - self.rect[1] + 1
+        if self.loc[1] + self.rect[1] > screen_height - self.rect[1]/3-10: # TODO - Add constant variable here
+            self.loc[1] = screen_height - self.rect[1] + 1 - self.rect[1]/3-10
             if Action.falling in self.actions:
                 self.remove_action(Action.falling)
         else:

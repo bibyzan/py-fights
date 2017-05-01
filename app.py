@@ -4,7 +4,7 @@ from fighter import Fighter, Direction, Action
 
 
 def make_player_2():
-    player2 = Player(Direction.left, [1400, 0])
+    player2 = Player(Direction.left, [1350, 200])
     player2.controls = {Action.running: [pg.K_LEFT, pg.K_RIGHT],
                         Action.attack: [pg.K_PAGEUP],
                         Action.jumping: [pg.K_UP],
@@ -110,6 +110,8 @@ class App:
         pg.display.update()
         if self.player.redraw or self.player2.redraw:
             self.screen.fill(pg.Color("slategray"))
+            self.screen.blit(pg.image.load("sprites/Stage.jpg"), [0,500])   
+            print (self.screen.get_rect())
             self.player.draw(self.screen, True)
             self.player2.draw(self.screen, True)
         if self.player.gg or self.player2.gg:
