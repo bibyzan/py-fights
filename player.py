@@ -4,7 +4,7 @@ import pygame as pg
 
 
 class Player(Fighter):
-    def __init__(self, direction=Direction.right, loc=[0, 0]):
+    def __init__(self, direction=Direction.right, loc=[50,200]):
         super().__init__(direction, loc)
         self.pressed_keys = []
         self.hp_status_bar = StatusBar(100, pg.Color("red"), [5,10])
